@@ -30,6 +30,8 @@ Source0:        https://github.com/GitCredentialManager/git-credential-manager/a
 # Prebuilt dotnet binary from https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 Source1:        dotnet-sdk-%{dotnet_version}-linux-arm64.tar.gz
 Source2:        dotnet-sdk-%{dotnet_version}-linux-x64.tar.gz
+# Pre-downloaded NuGet dependencies
+Source3:        nuget-packages.tar.gz
 Patch0:         add-arm64.patch
 Patch1:         runtime-arm64.patch
 Patch2:         install-buildoutput.patch
@@ -59,22 +61,22 @@ For more information see https://aka.ms/gcm
 
 %prep
 %ifarch aarch64
-%setup -q -a 1
+%setup -q -a 1 -a 3
 
 %patch0 -p1
 %patch1 -p1
 %endif
 
 %ifarch x86_64
-%setup -q -a 2
+%setup -q -a 2 -a 3
 %endif
 
 %patch2 -p1
 
 %build
 PATH=$PATH:${PWD}
-dotnet restore
-dotnet build Git-Credential-Manager.sln -c LinuxRelease
+dotnet restore --packages ./packages
+dotnet build Git-Credential-Manager.sln -c LinuxRelease --source ./packages
 
 %install
 %{__mkdir} -p %{buildroot}%{_libdir}
