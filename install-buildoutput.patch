@@ -1,0 +1,36 @@
+From 60316acdc92b95fb2337bd531f379dc685dc3f96 Mon Sep 17 00:00:00 2001
+From: Alec Su <ae40515@yahoo.com.tw>
+Date: Thu, 23 Feb 2023 15:48:47 +0000
+Subject: [PATCH] linux: install binaries into "buildoutput" directory
+
+---
+ src/linux/Packaging.Linux/Packaging.Linux.csproj | 2 +-
+ src/linux/Packaging.Linux/build.sh               | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/linux/Packaging.Linux/Packaging.Linux.csproj b/src/linux/Packaging.Linux/Packaging.Linux.csproj
+index e14eef0a4..173e8dfb6 100644
+--- a/src/linux/Packaging.Linux/Packaging.Linux.csproj
++++ b/src/linux/Packaging.Linux/Packaging.Linux.csproj
+@@ -8,7 +8,7 @@
+   </PropertyGroup>
+ 
+   <PropertyGroup>
+-    <InstallFromSource>false</InstallFromSource>
++    <InstallFromSource>true</InstallFromSource>
+   </PropertyGroup>
+ 
+   <ItemGroup>
+diff --git a/src/linux/Packaging.Linux/build.sh b/src/linux/Packaging.Linux/build.sh
+index 308530afe..feb551a32 100755
+--- a/src/linux/Packaging.Linux/build.sh
++++ b/src/linux/Packaging.Linux/build.sh
+@@ -50,7 +50,7 @@ SYMBOLS="$OUTDIR/payload.sym"
+ "$INSTALLER_SRC/layout.sh" --configuration="$CONFIGURATION" || exit 1
+ 
+ if [ $INSTALL_FROM_SOURCE = true ]; then
+-    INSTALL_LOCATION="/usr/local"
++    INSTALL_LOCATION="../../../buildoutput"
+     mkdir -p "$INSTALL_LOCATION"
+ 
+     echo "Installing..."
