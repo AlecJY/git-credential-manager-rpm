@@ -18,6 +18,8 @@
 %global __os_install_post %{nil}
 %endif
 
+%global dotnet_version    6.0.406
+
 Name:           git-credential-manager
 Version:        2.0.931
 Release:        0
@@ -25,6 +27,9 @@ Summary:        Secure, cross-platform Git credential storage
 License:        MIT
 URL:            https://github.com/GitCredentialManager/git-credential-manager
 Source0:        https://github.com/GitCredentialManager/git-credential-manager/archive/refs/tags/v%{version}.tar.gz
+# Prebuilt dotnet binary from https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+Source1:        dotnet-sdk-%{dotnet_version}-linux-arm64.tar.gz
+Source2:        dotnet-sdk-%{dotnet_version}-linux-x64.tar.gz
 Patch0:         add-arm64.patch
 Patch1:         runtime-arm64.patch
 Patch2:         install-buildoutput.patch
@@ -43,7 +48,6 @@ BuildRequires:  libicu69
 Requires:       libicu
 BuildRequires:  libicu
 %endif
-BuildRequires:  dotnet-sdk-6.0
 BuildRequires:  which
 ExclusiveArch:  aarch64 x86_64
 
@@ -54,16 +58,21 @@ including GitHub, BitBucket, and Azure DevOps.
 For more information see https://aka.ms/gcm
 
 %prep
-%setup -q
-
 %ifarch aarch64
+%setup -q -a 1
+
 %patch0 -p1
 %patch1 -p1
+%endif
+
+%ifarch x86_64
+%setup -q -a 2
 %endif
 
 %patch2 -p1
 
 %build
+PATH=$PATH:${PWD}
 dotnet restore
 dotnet build Git-Credential-Manager.sln -c LinuxRelease
 
