@@ -4,6 +4,12 @@
 # Copyright (c) 2023 Alec Su
 #
 
+%if !0%{?suse_version}
+%global debug_package     %{nil}
+%global _build_id_links   none
+%global __os_install_post %{nil}
+%endif
+
 Name:           git-credential-manager
 Version:        2.0.931
 Release:        0
