@@ -30,6 +30,7 @@ Requires:      libicu
 BuildRequires: libicu
 %endif
 BuildRequires: dotnet-sdk-6.0
+BuildRequires: which
 ExclusiveArch: aarch64 x86_64
 
 %description
