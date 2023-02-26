@@ -25,27 +25,27 @@ Summary:        Secure, cross-platform Git credential storage
 License:        MIT
 URL:            https://github.com/GitCredentialManager/git-credential-manager
 Source0:        https://github.com/GitCredentialManager/git-credential-manager/archive/refs/tags/v%{version}.tar.gz
-Patch0:        add-arm64.patch
-Patch1:        runtime-arm64.patch
-Patch2:        install-buildoutput.patch
-Requires:      git
+Patch0:         add-arm64.patch
+Patch1:         runtime-arm64.patch
+Patch2:         install-buildoutput.patch
+Requires:       git
 %if 0%{?suse_version}
-Requires:      libopenssl1_1
-BuildRequires: libopenssl1_1
+Requires:       libopenssl1_1
+BuildRequires:  libopenssl1_1
 %else
-Requires:      openssl-libs
-BuildRequires: openssl-libs
+Requires:       openssl-libs
+BuildRequires:  openssl-libs
 %endif
 %if 0%{?suse_version} && 0%{?suse_version} <= 1500
-Requires:      libicu69
-BuildRequires: libicu69
+Requires:       libicu69
+BuildRequires:  libicu69
 %else
-Requires:      libicu
-BuildRequires: libicu
+Requires:       libicu
+BuildRequires:  libicu
 %endif
-BuildRequires: dotnet-sdk-6.0
-BuildRequires: which
-ExclusiveArch: aarch64 x86_64
+BuildRequires:  dotnet-sdk-6.0
+BuildRequires:  which
+ExclusiveArch:  aarch64 x86_64
 
 %description
 Cross Platform Git Credential Manager command line utility.
