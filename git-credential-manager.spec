@@ -19,7 +19,7 @@
 %endif
 
 Name:           git-credential-manager
-Version:        2.0.931
+Version:        2.0.935
 Release:        0
 Summary:        Secure, cross-platform Git credential storage
 License:        MIT
