@@ -23,8 +23,8 @@ Version:        2.1.0
 Release:        0
 Summary:        Secure, cross-platform Git credential storage
 License:        MIT
-URL:            https://github.com/GitCredentialManager/git-credential-manager
-Source0:        https://github.com/GitCredentialManager/git-credential-manager/archive/refs/tags/v%{version}.tar.gz
+URL:            https://github.com/git-ecosystem/git-credential-manager
+Source0:        https://github.com/git-ecosystem/git-credential-manager/archive/refs/tags/v%{version}.tar.gz
 Patch0:         add-arm64.patch
 Patch1:         runtime-arm64.patch
 Patch2:         install-buildoutput.patch
