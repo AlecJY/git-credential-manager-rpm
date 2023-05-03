@@ -71,7 +71,7 @@ For more information see https://aka.ms/gcm
 
 %build
 PATH=$PATH:${PWD}
-dotnet restore --packages ~/.nuget/packages
+dotnet restore --packages ~/.nuget/packages --source ~/.nuget/packages
 dotnet build Git-Credential-Manager.sln -c LinuxRelease --source ~/.nuget/packages
 
 %install
