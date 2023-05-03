@@ -1,14 +1,14 @@
-From 27f7ef45d0eb27fba849d162dd3bdb5b0d38169b Mon Sep 17 00:00:00 2001
+From 5c30089595ae88ad42793b40a14b43436a6538d3 Mon Sep 17 00:00:00 2001
 From: Alec Su <ae40515@yahoo.com.tw>
-Date: Wed, 3 May 2023 06:48:54 +0000
-Subject: [PATCH] linux: add arm64
+Date: Wed, 3 May 2023 11:38:38 +0000
+Subject: [PATCH] linux: set runtime identifiers to only Linux x64 and arm64
 
 ---
  src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj b/src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj
-index 41cf1374b..40d3538bf 100644
+index 41cf1374b..5f54cf6bb 100644
 --- a/src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj
 +++ b/src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj
 @@ -4,7 +4,7 @@
@@ -16,7 +16,7 @@ index 41cf1374b..40d3538bf 100644
      <TargetFrameworks>net6.0</TargetFrameworks>
      <TargetFrameworks Condition="'$(OSPlatform)'=='windows'">net472;net6.0</TargetFrameworks>
 -    <RuntimeIdentifiers>win-x86;osx-x64;linux-x64;osx-arm64</RuntimeIdentifiers>
-+    <RuntimeIdentifiers>win-x86;osx-x64;linux-x64;osx-arm64;linux-arm64</RuntimeIdentifiers>
++    <RuntimeIdentifiers>linux-x64;linux-arm64</RuntimeIdentifiers>
      <PlatformTarget Condition="'$(OSPlatform)'=='windows'">x86</PlatformTarget>
      <AssemblyName>git-credential-manager</AssemblyName>
      <RootNamespace>GitCredentialManager</RootNamespace>

@@ -25,7 +25,7 @@ Summary:        Secure, cross-platform Git credential storage
 License:        MIT
 URL:            https://github.com/git-ecosystem/git-credential-manager
 Source0:        https://github.com/git-ecosystem/git-credential-manager/archive/refs/tags/v%{version}.tar.gz
-Patch0:         add-arm64.patch
+Patch0:         linux-only.patch
 Patch1:         runtime-arm64.patch
 Patch2:         install-buildoutput.patch
 Requires:       git
