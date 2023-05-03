@@ -56,8 +56,9 @@ For more information see https://aka.ms/gcm
 %prep
 %setup -q
 
-%ifarch aarch64
 %patch0 -p1
+
+%ifarch aarch64
 %patch1 -p1
 %endif
 
