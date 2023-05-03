@@ -1,42 +1,12 @@
-From ee97d6bc9186e9ee0daf93466052db6e249c4427 Mon Sep 17 00:00:00 2001
+From 27f7ef45d0eb27fba849d162dd3bdb5b0d38169b Mon Sep 17 00:00:00 2001
 From: Alec Su <ae40515@yahoo.com.tw>
-Date: Mon, 6 Feb 2023 16:27:02 +0800
+Date: Wed, 3 May 2023 06:48:54 +0000
 Subject: [PATCH] linux: add arm64
 
 ---
- .../Atlassian.Bitbucket.UI.Avalonia.csproj                      | 2 +-
- .../Git-Credential-Manager.UI.Avalonia.csproj                   | 2 +-
  src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj | 2 +-
- src/shared/GitHub.UI.Avalonia/GitHub.UI.Avalonia.csproj         | 2 +-
- src/shared/GitLab.UI.Avalonia/GitLab.UI.Avalonia.csproj         | 2 +-
- 5 files changed, 5 insertions(+), 5 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/src/shared/Atlassian.Bitbucket.UI.Avalonia/Atlassian.Bitbucket.UI.Avalonia.csproj b/src/shared/Atlassian.Bitbucket.UI.Avalonia/Atlassian.Bitbucket.UI.Avalonia.csproj
-index a9185278a..a9c83c2fb 100644
---- a/src/shared/Atlassian.Bitbucket.UI.Avalonia/Atlassian.Bitbucket.UI.Avalonia.csproj
-+++ b/src/shared/Atlassian.Bitbucket.UI.Avalonia/Atlassian.Bitbucket.UI.Avalonia.csproj
-@@ -3,7 +3,7 @@
-   <PropertyGroup>
-     <OutputType>WinExe</OutputType>
-     <TargetFramework>net6.0</TargetFramework>
--    <RuntimeIdentifiers>osx-x64;linux-x64;osx-arm64</RuntimeIdentifiers>
-+    <RuntimeIdentifiers>osx-x64;linux-x64;osx-arm64;linux-arm64</RuntimeIdentifiers>
-     <RootNamespace>Atlassian.Bitbucket.UI</RootNamespace>
-     <AssemblyName>Atlassian.Bitbucket.UI</AssemblyName>
-   </PropertyGroup>
-diff --git a/src/shared/Git-Credential-Manager.UI.Avalonia/Git-Credential-Manager.UI.Avalonia.csproj b/src/shared/Git-Credential-Manager.UI.Avalonia/Git-Credential-Manager.UI.Avalonia.csproj
-index 3cbd3d92e..b2b56e178 100644
---- a/src/shared/Git-Credential-Manager.UI.Avalonia/Git-Credential-Manager.UI.Avalonia.csproj
-+++ b/src/shared/Git-Credential-Manager.UI.Avalonia/Git-Credential-Manager.UI.Avalonia.csproj
-@@ -3,7 +3,7 @@
-   <PropertyGroup>
-     <OutputType>WinExe</OutputType>
-     <TargetFramework>net6.0</TargetFramework>
--    <RuntimeIdentifiers>osx-x64;linux-x64;osx-arm64</RuntimeIdentifiers>
-+    <RuntimeIdentifiers>osx-x64;linux-x64;osx-arm64;linux-arm64</RuntimeIdentifiers>
-     <AssemblyName>git-credential-manager-ui</AssemblyName>
-     <RootNamespace>GitCredentialManager.UI</RootNamespace>
-   </PropertyGroup>
 diff --git a/src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj b/src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj
 index 41cf1374b..40d3538bf 100644
 --- a/src/shared/Git-Credential-Manager/Git-Credential-Manager.csproj
@@ -50,29 +20,3 @@ index 41cf1374b..40d3538bf 100644
      <PlatformTarget Condition="'$(OSPlatform)'=='windows'">x86</PlatformTarget>
      <AssemblyName>git-credential-manager</AssemblyName>
      <RootNamespace>GitCredentialManager</RootNamespace>
-diff --git a/src/shared/GitHub.UI.Avalonia/GitHub.UI.Avalonia.csproj b/src/shared/GitHub.UI.Avalonia/GitHub.UI.Avalonia.csproj
-index 828677fcc..99a6fe394 100644
---- a/src/shared/GitHub.UI.Avalonia/GitHub.UI.Avalonia.csproj
-+++ b/src/shared/GitHub.UI.Avalonia/GitHub.UI.Avalonia.csproj
-@@ -3,7 +3,7 @@
-   <PropertyGroup>
-     <OutputType>WinExe</OutputType>
-     <TargetFramework>net6.0</TargetFramework>
--    <RuntimeIdentifiers>osx-x64;linux-x64;osx-arm64</RuntimeIdentifiers>
-+    <RuntimeIdentifiers>osx-x64;linux-x64;osx-arm64;linux-arm64</RuntimeIdentifiers>
-     <RootNamespace>GitHub.UI</RootNamespace>
-     <AssemblyName>GitHub.UI</AssemblyName>
-   </PropertyGroup>
-diff --git a/src/shared/GitLab.UI.Avalonia/GitLab.UI.Avalonia.csproj b/src/shared/GitLab.UI.Avalonia/GitLab.UI.Avalonia.csproj
-index 26927c272..8471dd332 100644
---- a/src/shared/GitLab.UI.Avalonia/GitLab.UI.Avalonia.csproj
-+++ b/src/shared/GitLab.UI.Avalonia/GitLab.UI.Avalonia.csproj
-@@ -3,7 +3,7 @@
-   <PropertyGroup>
-     <OutputType>WinExe</OutputType>
-     <TargetFramework>net6.0</TargetFramework>
--    <RuntimeIdentifiers>osx-x64;linux-x64;osx-arm64</RuntimeIdentifiers>
-+    <RuntimeIdentifiers>osx-x64;linux-x64;osx-arm64;linux-arm64</RuntimeIdentifiers>
-     <RootNamespace>GitLab.UI</RootNamespace>
-     <AssemblyName>GitLab.UI</AssemblyName>
-   </PropertyGroup>
