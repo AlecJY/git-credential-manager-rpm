@@ -7,7 +7,9 @@
 There are prebuilt RPMs for the following distributions
 * CentOS 8
 * Fedora 37
+* Fedora 38
 * openSUSE 15.4
+* openSUSE 15.5
 * openSUSE Tumbleweed
 
 Follow the [instruction](https://software.opensuse.org//download.html?project=home%3AAlecJY%3Agcm&package=git-credential-manager) to install
@@ -17,8 +19,8 @@ There are several patches appied to the original source code
 
 | Name                        | Source                                                                                                                                      | Arch    | Description                                           |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|---------|-------------------------------------------------------|
-| `linux-only.patch`          | [AlecJY/git-credential-manager@`5c30089`](https://github.com/AlecJY/git-credential-manager/commit/5c30089595ae88ad42793b40a14b43436a6538d3) | all     | Add `linux-arm64` runtime identifier to support aarch64 and remove other non-Linux identifiers to prevent downloading dependencies of other platforms |
-| `runtime-arm64.patch`       | [AlecJY/git-credential-manager@`4e9fd67`](https://github.com/AlecJY/git-credential-manager/commit/4e9fd673383bb1161bfe2d34c4353b52dd6cf0ed) | aarch64 | Patch the Linux build script to set dotnet runtime to `linux-arm64` |
+| `linux-only.patch`          | [AlecJY/git-credential-manager@`28216f2`](https://github.com/AlecJY/git-credential-manager/commit/28216f2aa0b65cbb52a4db0aa528678fdec17855) | all     | Add `linux-arm64` runtime identifier to support aarch64 and remove other non-Linux identifiers to prevent downloading dependencies of other platforms |
+| `runtime-arm64.patch`       | [AlecJY/git-credential-manager@`f57eb4f`](https://github.com/AlecJY/git-credential-manager/commit/f57eb4fc39cdf1574675e3e4ab633be0d7cc29dc) | aarch64 | Patch the Linux build script to set dotnet runtime to `linux-arm64` |
 | `install-buildoutput.patch` | [AlecJY/git-credential-manager@`60316ac`](https://github.com/AlecJY/git-credential-manager/commit/60316acdc92b95fb2337bd531f379dc685dc3f96) | all     | Patch the Linux build script to install Git Credential Manager into "buildoutput" directory instead of generating deb and tar packages |
 
 ## Build
@@ -29,12 +31,12 @@ There are to variants of the RPM SPEC file, the normal one requires Internet acc
 #### Install the build dependencies
 ```bash
 # For RHEL / CentOS / Fedora / etc...
-$ sudo yum install -y rpm-build dotnet-sdk-6.0 openssl-libs libicu
+$ sudo yum install -y rpm-build dotnet-sdk-7.0 openssl-libs libicu
 # For SLES / openSUSE / etc...
 # Run the first command only if you didn't install dotnet SDK
 $ sudo zypper addrepo https://packages.microsoft.com/config/opensuse/15/prod.repo
 $ sudo zypper refresh
-$ sudo zypper install -y rpm-build dotnet-sdk-6.0 libopenssl1_1 libicu
+$ sudo zypper install -y rpm-build dotnet-sdk-7.0 libopenssl1_1 libicu
 ```
 
 #### Build the RPM
@@ -53,10 +55,10 @@ Download from https://github.com/AlecJY/git-credential-manager-rpm/archive/refs/
 Download from https://github.com/GitCredentialManager/git-credential-manager/archive/refs/tags/v${version}.tar.gz
 
 Replace ${version} with the latest version of Git Credential Manager. For example: 
-https://github.com/GitCredentialManager/git-credential-manager/archive/refs/tags/v2.1.0.tar.gz
+https://github.com/GitCredentialManager/git-credential-manager/archive/refs/tags/v2.2.0.tar.gz
 
-##### Prebuilt dotnet SDK 6.0 binaries
-You can download from https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+##### Prebuilt dotnet SDK 7.0 binaries
+You can download from https://dotnet.microsoft.com/en-us/download/dotnet/7.0
 
 Download both `arm64` and `x64` binaries for Linux even if you only want to build on one architecture.
 
@@ -87,8 +89,8 @@ $ sudo zypper install -y rpm-build libopenssl1_1 libicu
 Now you should have four files
 * obs.tar.gz
 * The compressed GCM source code. Ex: v2.1.0.tar.gz
-* dotnet-sdk-6.0.xxx-linux-arm64.tar.gz
-* dotnet-sdk-6.0.xxx-linux-x64.tar.gz
+* dotnet-sdk-7.0.xxx-linux-arm64.tar.gz
+* dotnet-sdk-7.0.xxx-linux-x64.tar.gz
 * nuget-packages.tar.gz
 
 Extract `obs.tar.gz` and put other four files into the extracted `git-credential-manager-rpm-obs` directory.
@@ -96,7 +98,7 @@ Extract `obs.tar.gz` and put other four files into the extracted `git-credential
 Then open `git-credential-manager.spec` with a text editor. Check the two lines
 ```specfile
 ...
-%global dotnet_version    6.0.xxx
+%global dotnet_version    7.0.xxx
 ...
 Version:        2.x.x
 ...
