@@ -12,11 +12,9 @@
 # license that conforms to the Open Source Definition (Version 1.9)
 # published by the Open Source Initiative.
 
-%if !0%{?suse_version}
 %global debug_package     %{nil}
 %global _build_id_links   none
 %global __os_install_post %{nil}
-%endif
 
 Name:           git-credential-manager
 Version:        2.2.0
