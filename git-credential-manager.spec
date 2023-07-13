@@ -17,7 +17,7 @@
 %global __os_install_post %{nil}
 
 Name:           git-credential-manager
-Version:        2.2.1
+Version:        2.2.2
 Release:        0
 Summary:        Secure, cross-platform Git credential storage
 License:        MIT
