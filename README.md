@@ -21,7 +21,7 @@ There are several patches appied to the original source code
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|---------|-------------------------------------------------------|
 | `linux-only.patch`          | [AlecJY/git-credential-manager@`28216f2`](https://github.com/AlecJY/git-credential-manager/commit/28216f2aa0b65cbb52a4db0aa528678fdec17855) | all     | Add `linux-arm64` runtime identifier to support aarch64 and remove other non-Linux identifiers to prevent downloading dependencies of other platforms |
 | `runtime-arm64.patch`       | [AlecJY/git-credential-manager@`f57eb4f`](https://github.com/AlecJY/git-credential-manager/commit/f57eb4fc39cdf1574675e3e4ab633be0d7cc29dc) | aarch64 | Patch the Linux build script to set dotnet runtime to `linux-arm64` |
-| `install-buildoutput.patch` | [AlecJY/git-credential-manager@`60316ac`](https://github.com/AlecJY/git-credential-manager/commit/60316acdc92b95fb2337bd531f379dc685dc3f96) | all     | Patch the Linux build script to install Git Credential Manager into "buildoutput" directory instead of generating deb and tar packages |
+| `install-buildoutput.patch` | [AlecJY/git-credential-manager@`e256ea3`](https://github.com/AlecJY/git-credential-manager/commit/e256ea3a2c6a6ff52db976a5a92ab701a5a6eed0) | all     | Patch the Linux build script to install Git Credential Manager into "buildoutput" directory instead of generating deb and tar packages |
 
 ## Build
 There are to variants of the RPM SPEC file, the normal one requires Internet access and the one especially for openSUSE Build Service or other environments without Internet access.
