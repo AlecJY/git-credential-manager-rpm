@@ -1,6 +1,6 @@
-From f57eb4fc39cdf1574675e3e4ab633be0d7cc29dc Mon Sep 17 00:00:00 2001
+From b2065a716b45566721c26f01f8d02e168d8aa052 Mon Sep 17 00:00:00 2001
 From: Alec Su <ae40515@yahoo.com.tw>
-Date: Tue, 27 Jun 2023 02:40:27 +0000
+Date: Wed, 3 Jul 2024 14:37:53 +0000
 Subject: [PATCH] linux: set build runtime to linux-arm64
 
 ---
@@ -8,13 +8,13 @@ Subject: [PATCH] linux: set build runtime to linux-arm64
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/linux/Packaging.Linux/layout.sh b/src/linux/Packaging.Linux/layout.sh
-index 5f3ba8ca8..706db58e2 100755
+index 6679c39ca..8c4e75700 100755
 --- a/src/linux/Packaging.Linux/layout.sh
 +++ b/src/linux/Packaging.Linux/layout.sh
 @@ -39,7 +39,7 @@ PROJ_OUT="$OUT/linux/Packaging.Linux"
  
  # Build parameters
- FRAMEWORK=net7.0
+ FRAMEWORK=net8.0
 -RUNTIME=linux-x64
 +RUNTIME=linux-arm64
  
