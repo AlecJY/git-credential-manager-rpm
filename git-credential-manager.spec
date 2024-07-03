@@ -29,7 +29,7 @@ Source0:        https://github.com/git-ecosystem/git-credential-manager/archive/
 Source1:        dotnet-sdk-%{dotnet_version}-linux-arm64.tar.gz
 Source2:        dotnet-sdk-%{dotnet_version}-linux-x64.tar.gz
 # Pre-downloaded NuGet dependencies
-Source3:        nuget-packages.tar.gz
+Source3:        nuget-packages.tar.xz
 Patch0:         linux-only.patch
 Patch1:         install-buildoutput.patch
 Requires:       git
