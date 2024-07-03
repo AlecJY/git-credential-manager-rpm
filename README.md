@@ -31,12 +31,12 @@ There are to variants of the RPM SPEC file, the normal one requires Internet acc
 #### Install the build dependencies
 ```bash
 # For RHEL / CentOS / Fedora / etc...
-$ sudo yum install -y rpm-build dotnet-sdk-7.0 openssl-libs libicu
+$ sudo yum install -y rpm-build dotnet-sdk-8.0 openssl-libs libicu
 # For SLES / openSUSE / etc...
 # Run the first command only if you didn't install dotnet SDK
 $ sudo zypper addrepo https://packages.microsoft.com/config/opensuse/15/prod.repo
 $ sudo zypper refresh
-$ sudo zypper install -y rpm-build dotnet-sdk-7.0 libopenssl1_1 libicu
+$ sudo zypper install -y rpm-build dotnet-sdk-8.0 libopenssl1_1 libicu
 ```
 
 #### Build the RPM
@@ -57,8 +57,8 @@ Download from https://github.com/GitCredentialManager/git-credential-manager/arc
 Replace ${version} with the latest version of Git Credential Manager. For example: 
 https://github.com/GitCredentialManager/git-credential-manager/archive/refs/tags/v2.2.0.tar.gz
 
-##### Prebuilt dotnet SDK 7.0 binaries
-You can download from https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+##### Prebuilt dotnet SDK 8.0 binaries
+You can download from https://dotnet.microsoft.com/en-us/download/dotnet/8.0
 
 Download both `arm64` and `x64` binaries for Linux even if you only want to build on one architecture.
 
@@ -89,8 +89,8 @@ $ sudo zypper install -y rpm-build libopenssl1_1 libicu
 Now you should have four files
 * obs.tar.gz
 * The compressed GCM source code. Ex: v2.1.0.tar.gz
-* dotnet-sdk-7.0.xxx-linux-arm64.tar.gz
-* dotnet-sdk-7.0.xxx-linux-x64.tar.gz
+* dotnet-sdk-8.0.xxx-linux-arm64.tar.gz
+* dotnet-sdk-8.0.xxx-linux-x64.tar.gz
 * nuget-packages.tar.gz
 
 Extract `obs.tar.gz` and put other four files into the extracted `git-credential-manager-rpm-obs` directory.
@@ -98,7 +98,7 @@ Extract `obs.tar.gz` and put other four files into the extracted `git-credential
 Then open `git-credential-manager.spec` with a text editor. Check the two lines
 ```specfile
 ...
-%global dotnet_version    7.0.xxx
+%global dotnet_version    8.0.xxx
 ...
 Version:        2.x.x
 ...

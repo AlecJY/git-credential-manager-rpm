@@ -41,7 +41,7 @@ BuildRequires:  libicu69
 Requires:       libicu
 BuildRequires:  libicu
 %endif
-BuildRequires:  dotnet-sdk-7.0
+BuildRequires:  dotnet-sdk-8.0
 BuildRequires:  which
 ExclusiveArch:  aarch64 x86_64
 
