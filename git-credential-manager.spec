@@ -54,13 +54,13 @@ For more information see https://aka.ms/gcm
 %prep
 %setup -q
 
-%patch0 -p1
+%patch -P0 -p1
 
 %ifarch aarch64
-%patch1 -p1
+%patch -P1 -p1
 %endif
 
-%patch2 -p1
+%patch -P2 -p1
 
 %build
 dotnet restore
