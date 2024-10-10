@@ -6,10 +6,11 @@
 ## Install
 There are prebuilt RPMs for the following distributions
 * CentOS 8
-* Fedora 37
-* Fedora 38
-* openSUSE 15.4
+* Fedora 39
+* Fedora 40
 * openSUSE 15.5
+* openSUSE 15.6
+* openSUSE Slowroll
 * openSUSE Tumbleweed
 
 Follow the [instruction](https://software.opensuse.org//download.html?project=home%3AAlecJY%3Agcm&package=git-credential-manager) to install
