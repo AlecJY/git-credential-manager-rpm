@@ -6,10 +6,11 @@
 ## Install
 There are prebuilt RPMs for the following distributions
 * CentOS 8
-* Fedora 39
-* Fedora 40
-* openSUSE 15.5
-* openSUSE 15.6
+* Fedora 41
+* Fedora 42
+* SLES 15 SP6 / openSUSE 15.6
+* SLES 15 SP7
+* SLES 16.0 / openSUSE 16.0
 * openSUSE Slowroll
 * openSUSE Tumbleweed
 
