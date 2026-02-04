@@ -17,8 +17,8 @@
 %global __os_install_post %{nil}
 
 Name:           git-credential-manager
-Version:        2.6.1
-Release:        1
+Version:        2.7.1
+Release:        0
 Summary:        Secure, cross-platform Git credential storage
 License:        MIT
 URL:            https://github.com/git-ecosystem/git-credential-manager
