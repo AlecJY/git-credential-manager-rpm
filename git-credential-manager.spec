@@ -58,18 +58,21 @@ For more information see https://aka.ms/gcm
 
 %prep
 %ifarch aarch64
-%setup -q -a 1 -a 3
+%setup -q -a 1
 %elifarch x86_64
-%setup -q -a 2 -a 3
+%setup -q -a 2
 %endif
 
 %patch -P0 -p1
 %patch -P1 -p1
 
+%{__mkdir} -p ~/.nuget
+%{__tar} -xf %{SOURCE3} -C ~/.nuget
+
 %build
 PATH=$PATH:${PWD}
-dotnet restore --packages ./packages
-dotnet build Git-Credential-Manager.sln -c LinuxRelease --source ./packages
+dotnet restore --packages ~/.nuget/packages
+dotnet build Git-Credential-Manager.sln -c LinuxRelease --source ~/.nuget/packages
 
 %install
 %{__mkdir} -p %{buildroot}%{_libdir}
