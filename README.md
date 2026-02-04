@@ -6,8 +6,8 @@
 ## Install
 There are prebuilt RPMs for the following distributions
 * CentOS 8
-* Fedora 41
 * Fedora 42
+* Fedora 43
 * SLES 15 SP6 / openSUSE 15.6
 * SLES 15 SP7
 * SLES 16.0 / openSUSE 16.0
@@ -21,8 +21,7 @@ There are several patches appied to the original source code
 
 | Name                        | Source                                                                                                                                      | Arch    | Description                                           |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|---------|-------------------------------------------------------|
-| `linux-only.patch`          | [AlecJY/git-credential-manager@`446e4eb`](https://github.com/AlecJY/git-credential-manager/commit/446e4eb697eb7ac5f7d5630d57403dd18fda42aa) | all     | Add `linux-arm64` runtime identifier to support aarch64 and remove other non-Linux identifiers to prevent downloading dependencies of other platforms |
-| `runtime-arm64.patch`       | [AlecJY/git-credential-manager@`b2065a7`](https://github.com/AlecJY/git-credential-manager/commit/b2065a716b45566721c26f01f8d02e168d8aa052) | aarch64 | Patch the Linux build script to set dotnet runtime to `linux-arm64` |
+| `linux-only.patch`          | [AlecJY/git-credential-manager@`446e4eb`](https://github.com/AlecJY/git-credential-manager/commit/11e0e5571253585300bcebc79a0a4dfb9c53ffd6) | all     | Remove linux-arm and other non-Linux identifiers to prevent downloading dependencies of other platforms for saving disk space (especially in OBS) |
 | `install-buildoutput.patch` | [AlecJY/git-credential-manager@`e256ea3`](https://github.com/AlecJY/git-credential-manager/commit/e256ea3a2c6a6ff52db976a5a92ab701a5a6eed0) | all     | Patch the Linux build script to install Git Credential Manager into "buildoutput" directory instead of generating deb and tar packages |
 
 ## Build
