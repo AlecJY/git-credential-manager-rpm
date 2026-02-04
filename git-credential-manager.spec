@@ -24,8 +24,7 @@ License:        MIT
 URL:            https://github.com/git-ecosystem/git-credential-manager
 Source0:        https://github.com/git-ecosystem/git-credential-manager/archive/refs/tags/v%{version}.tar.gz
 Patch0:         linux-only.patch
-Patch1:         runtime-arm64.patch
-Patch2:         install-buildoutput.patch
+Patch1:         install-buildoutput.patch
 Requires:       git
 %if 0%{?suse_version}
 Requires:       libopenssl3
@@ -55,12 +54,7 @@ For more information see https://aka.ms/gcm
 %setup -q
 
 %patch -P0 -p1
-
-%ifarch aarch64
 %patch -P1 -p1
-%endif
-
-%patch -P2 -p1
 
 %build
 dotnet restore
