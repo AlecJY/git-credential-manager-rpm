@@ -59,8 +59,10 @@ For more information see https://aka.ms/gcm
 %prep
 %ifarch aarch64
 %setup -q -a 1
-%elifarch x86_64
+%else
+%ifarch x86_64
 %setup -q -a 2
+%endif
 %endif
 
 %patch -P0 -p1
