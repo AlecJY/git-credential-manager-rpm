@@ -17,7 +17,7 @@
 %global __os_install_post %{nil}
 
 Name:           git-credential-manager
-Version:        2.7.2
+Version:        2.8.0
 Release:        0
 Summary:        Secure, cross-platform Git credential storage
 License:        MIT
@@ -40,7 +40,7 @@ BuildRequires:  libicu69
 Requires:       libicu
 BuildRequires:  libicu
 %endif
-BuildRequires:  dotnet-sdk-8.0
+BuildRequires:  dotnet-sdk-10.0
 BuildRequires:  which
 ExclusiveArch:  aarch64 x86_64
 
